@@ -38,7 +38,7 @@ namespace v0910
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+for (int i = 0; i < 100; i++)
             {
                 labels[i].Left += vx[i];
                 labels[i].Top += vy[i];
@@ -46,18 +46,22 @@ namespace v0910
                 if (labels[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
+                    labels[i].Text = "☆";
                 }
                 if (labels[i].Top < 0)
                 {
                     vy[i] = Math.Abs(vy[i]);
+                    labels[i].Text = "☆";
                 }
                 if (labels[i].Right > ClientSize.Width)
                 {
                     vx[i] = -Math.Abs(vx[i]);
+                    labels[i].Text = "☆";
                 }
                 if (labels[i].Bottom > ClientSize.Height)
                 {
                     vy[i] = -Math.Abs(vy[i]);
+                    labels[i].Text = "☆";
                 }
             }
         }
