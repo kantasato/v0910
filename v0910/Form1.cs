@@ -12,16 +12,17 @@ namespace v0910
 {
     public partial class Form1 : Form
     {
+        const int ChrMax = 100;
         static Random rand = new Random();
-        int[] vx = new int[100];
-        int[] vy = new int[100];
-        Label[] labels = new Label[100];
+        int[] vx = new int[ChrMax];
+        int[] vy = new int[ChrMax];
+        Label[] labels = new Label[ChrMax];
 
         public Form1()
         {
             InitializeComponent();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < ChrMax; i++)
             {
                 vx[i] = rand.Next(-15, 16);
                 vy[i] = rand.Next(-15, 16);
@@ -38,7 +39,7 @@ namespace v0910
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-for (int i = 0; i < 100; i++)
+            for (int i = 0; i < ChrMax; i++)
             {
                 labels[i].Left += vx[i];
                 labels[i].Top += vy[i];
@@ -63,6 +64,23 @@ for (int i = 0; i < 100; i++)
                     vy[i] = -Math.Abs(vy[i]);
                     labels[i].Text = "☆";
                 }
+   
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++) 
+            {
+                if(i==2)
+                {
+                    continue;
+                }
+            if(i==5)
+            {
+                break;
+            }
+                MessageBox.Show(""+i);
             }
         }
     }
